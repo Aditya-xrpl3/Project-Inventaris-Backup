@@ -1,4 +1,3 @@
-// src/pages/LoginPage.jsx
 export default function AdminDashboard() {
   return (
     <div>
