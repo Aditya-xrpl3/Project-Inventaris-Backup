@@ -34,7 +34,7 @@ class LokasiDetailByScanView(generics.RetrieveAPIView):
     """
     queryset = Lokasi.objects.all()
     serializer_class = LokasiDetailSerializer
-    permission_classes = [permissions.IsAuthenticated] # Hanya user terdaftar yg bisa scan
+    permission_classes = [permissions.AllowAny]  # Tanpa login juga bisa scan
     # 'lookup_field' default-nya 'pk' (primary key), ini sudah pas.
 
 class LaporanKerusakanCreateView(generics.CreateAPIView):
@@ -44,7 +44,7 @@ class LaporanKerusakanCreateView(generics.CreateAPIView):
     """
     queryset = LaporanKerusakan.objects.all()
     serializer_class = LaporanKerusakanCreateSerializer
-    permission_classes = [permissions.AllowAny] # Hanya user terdaftar yg bisa lapor
+    permission_classes = [permissions.AllowAny]  # User biasa bisa lapor tanpa login
 
 class MyLaporanListView(generics.ListAPIView):
     """
